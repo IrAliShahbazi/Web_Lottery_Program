@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Lottery Program(Basic)</title>
+    <style>
+        .button{
+            color: white;
+            background-color: white;
+            border: hidden;
+        }
+        button{
+            background-color: black;
+            color: white;
+            font-size: 50px;
+            border: hidden;
+            font-family: Candara;
+        }
+        input{
+            font-size: 50px;
+            font-family: Candara;
+        }
+    </style>
+</head>
+<body>
+<button id="b1" onclick="add1()"><span id="s">add member</span></button>
+<button onclick="latary1()">Lottery</button>
+<div>
+    <input type="hidden" id="i" placeholder="enter name" value="">
+    <button id="b" class="button" onclick="save1()">save</button>
+</div>
+<!--این خط کد ویرایش نشود--><h1>GitHub:<a href = "https://github.com/IrAliShahbazi">https://github.com/IrAliShahbazi</a></h1>
+<script>
+    var name1=[];
+    function add1() {
+        document.getElementById("i").type="text";
+        document.getElementById("b").style.backgroundColor="black";
+        document.getElementById("s").innerText="close";
+        document.getElementById("b1").onclick=function onclick(event) { close1() };
+    }
+    function close1() {
+        document.getElementById("i").type="hidden";
+        document.getElementById("b").style.backgroundColor="white";
+        document.getElementById("s").innerText="add member";
+        document.getElementById("b1").onclick=function onclick(event) { add1() };
+    }
+    function save1() {
+        name1.push(document.getElementById("i").value);
+        document.getElementById("i").value="";
+    }
+    function latary1() {
+        var num=Math.floor(Math.random()*name1.length)
+        alert(name1[num]);
+    }
+</script>
+</body>
+</html>
